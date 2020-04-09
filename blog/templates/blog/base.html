@@ -1,5 +1,5 @@
 {% load static %}
-<html>
+<html lang="en">
     <head>
         <title>Charlotte's Blog</title>
         <meta charset="utf-8">
@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <div class="page-header text-center img-fluid">
+        <header class="page-header text-center img-fluid">
             {% if user.is_authenticated %}
                 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
                 <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
@@ -20,14 +20,14 @@
             {% endif %}
             <h1 class="display-1" id="title"><a href="/">Charlotte's Blog</a></h1>
             <p class="lead mt-1" id="subtitle">Here's a blog site I made with Django Girls Sheffield.</p>
-        </div>
-        <div class="content container">
+        </header>
+        <main class="content container">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     {% block content %}
                     {% endblock %}
                 </div>
             </div>
-        </div>
+        </main>
     </body>
 </html>
